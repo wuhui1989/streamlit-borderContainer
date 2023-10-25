@@ -19,31 +19,7 @@ function onRender(event) {
     // const {input1, input2, input3} = event.detail.args
     // You'll most likely want to pass some data back to Python like this
     // sendValue({output1: "foo", output2: "bar"})
-    //  const {chatlist} = event.detail.args;
-    const chatlist = [
-      {
-        question:
-          "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
-        response: "ou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like this",
-        user: "user",
-        robot: "robot",
-      },
-      {
-        question:
-          "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
-        response: "ssss",
-        user: "assistant",
-        robot: "robot",
-      },
-      {
-        question:
-          "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
-        response: "ssss",
-        user: "ai",
-        robot: "robot",
-      },
-    ];
-
+    const {chatlist} = event.detail.args;
     let innerHtml = "";
     if (chatlist?.length && chatlist.length > 0) {
       for (let i = 0; i < chatlist.length; i++) {

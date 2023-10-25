@@ -14,12 +14,14 @@ _component_func = components.declare_component(
 # Create the python function that will be called
 def st_bordercontainer(
     key: Optional[str] = None,
+    chatlist = []
 ):
     """
     Add a descriptive docstring
     """
     component_value = _component_func(
-        key=key
+        key=key,
+        chatlist=chatlist
     )
 
     return component_value
@@ -27,7 +29,23 @@ def st_bordercontainer(
 
 def main():
     # st.write("## Example")
-    value = st_bordercontainer()
+    chatlist = [
+      {
+        "question":
+          "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
+        "response": "ou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like this",
+        "user": "user",
+        "robot": "robot",
+      },
+      {
+        "question":
+          "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
+        "response": "ssss",
+        "user": "assistant",
+        "robot": "robot",
+      }
+     ]
+    value = st_bordercontainer(chatlist = chatlist)
 
     st.write(value)
 
