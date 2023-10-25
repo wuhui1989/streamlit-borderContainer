@@ -14,14 +14,16 @@ _component_func = components.declare_component(
 # Create the python function that will be called
 def st_bordercontainer(
     key: Optional[str] = None,
-    chatlist = []
+    chatlist = [],
+    height = 400
 ):
     """
     Add a descriptive docstring
     """
     component_value = _component_func(
         key=key,
-        chatlist=chatlist
+        chatlist=chatlist,
+        height=height
     )
 
     return component_value
@@ -45,7 +47,7 @@ def main():
         "robot": "robot",
       }
      ]
-    value = st_bordercontainer(chatlist = chatlist)
+    value = st_bordercontainer(chatlist = chatlist,height=300)
 
     st.write(value)
 

@@ -19,7 +19,7 @@ function onRender(event) {
     // const {input1, input2, input3} = event.detail.args
     // You'll most likely want to pass some data back to Python like this
     // sendValue({output1: "foo", output2: "bar"})
-    const {chatlist} = event.detail.args;
+    const {chatlist,height} = event.detail.args;
     let innerHtml = "";
     if (chatlist?.length && chatlist.length > 0) {
       for (let i = 0; i < chatlist.length; i++) {
@@ -45,7 +45,7 @@ function onRender(event) {
     if (innerHtml) {
       document.getElementById("borderContainer").innerHTML = innerHtml;
     }
-
+    Streamlit.setFrameHeight(height);
     window.rendered = true;
   }
 }
