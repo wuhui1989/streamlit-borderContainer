@@ -19,33 +19,43 @@ function onRender(event) {
     // const {input1, input2, input3} = event.detail.args
     // You'll most likely want to pass some data back to Python like this
     // sendValue({output1: "foo", output2: "bar"})
-    const {chatlist,height} = event.detail.args;
+    const { chatlist, height } = event.detail.args;
+
     let innerHtml = "";
     if (chatlist?.length && chatlist.length > 0) {
+
       for (let i = 0; i < chatlist.length; i++) {
-        innerHtml += `<div class="messageRow">
-        <div class="avator">
-          ${chatlist[i].user}
-        </div>
-        <div class="imgBox">
-          <img src=${chatlist[i].question} />
-        </div>
-      </div>
-      <div class="responseRow">
-          <div class="rebotAvator">
-            ${chatlist[i].robot}
-          </div>
-          <div class="responseBox">
-            <p>${chatlist[i].response}</p>
-          </div>
-      </div>`;
+        innerHtml += `
+         '<div class="${
+           chatlist[i].user ? "messageRow" : "responseRow"
+         }"><div class="${chatlist[i].user ? "avator" : "rebotAvator"}"> ${
+          chatlist[i].user ? chatlist[i].user : chatlist[i].robot
+        }</div> ${
+          chatlist[i].user
+            ? chatlist[i].question.type === "img"
+              ? "<div class='imgBox'><img src=" +
+                chatlist[i].question.content +
+                " /></div>"
+              : "<div class='questionBox'>" +
+                chatlist[i].question.content +
+                " </div>"
+            : chatlist[i].response.type === "img"
+            ? "<div class='imgBox'><img src=" +
+              chatlist[i].response.content +
+              " /></div>"
+            : "<div class='responseBox'>" +
+              chatlist[i].response.content +
+              " </div>"
+        }</div>
+
+        `;
       }
     }
 
     if (innerHtml) {
       document.getElementById("borderContainer").innerHTML = innerHtml;
     }
-    document.getElementById("borderContainer").style.height = height -2 + "px";
+    document.getElementById("borderContainer").style.height = height - 2 + "px";
     Streamlit.setFrameHeight(height);
     window.rendered = true;
   }

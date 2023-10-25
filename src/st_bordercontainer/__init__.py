@@ -33,20 +33,41 @@ def main():
     # st.write("## Example")
     chatlist = [
       {
-        "question":
-          "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
-        "response": "ou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like this",
+        "question": {
+          "type": "img",
+          "content":
+            "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
+        },
+
         "user": "user",
-        "robot": "robot",
       },
       {
-        "question":
-          "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
-        "response": "ssss",
-        "user": "assistant",
-        "robot": "robot",
-      }
-     ]
+        "response": {
+          "type": "text",
+          "content":
+            "ou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like this",
+        },
+        "robot": "robot1",
+      },
+      {
+        "response": {
+          "type": "img",
+          "content":
+            "https://static.openxlab.org.cn/landmarks/pc/footerbanner.png",
+        },
+
+        "robot": "robot2",
+      },
+      {
+        "question": {
+          "type": "text",
+          "content":
+            "ou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like thisou'll most likely want to pass some data back to Python like this",
+        },
+        "user": "user2",
+      },
+    ]
+     
     value = st_bordercontainer(chatlist = chatlist,height=300)
 
     st.write(value)

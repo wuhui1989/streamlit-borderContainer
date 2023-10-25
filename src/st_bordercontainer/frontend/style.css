@@ -15,7 +15,8 @@ body{
     display: flex;
     flex-direction: row;
     gap: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -35,17 +36,30 @@ body{
     width: 0px;
     flex: 1;
 }
-
 #borderContainer .messageRow .imgBox img{
     width: 100%;
+}
+
+#borderContainer .messageRow .questionBox p{
+    margin-top: 0px;
+    text-decoration: none;
+}
+
+#borderContainer .messageRow .questionBox{
+    width: 0px;
+    flex: 1;
+    padding: 12px 15px;
+    background-color: var(--fill-2, #F4F5F9);
+    border-radius: 8px;
 }
 
 
 #borderContainer .responseRow{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 5px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #borderContainer .responseRow .rebotAvator{
@@ -74,19 +88,28 @@ body{
     text-decoration: none;
 }
 
+#borderContainer .responseRow .imgBox{
+    width: 0px;
+    flex: 1;
+}
+
+#borderContainer .responseRow .imgBox img{
+    width: 100%;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
-    background: #fff;
+    background: rgb(240, 242, 246);
 
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 90px;
-    background:  #fff;
+    background:  rgb(240, 242, 246);
 }
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 4px  #fff;
+    -webkit-box-shadow: inset 0 0 4px  rgb(240, 242, 246);
     border-radius: 90px;
-    background:  #fff;
+    background:  rgb(240, 242, 246);
     opacity: 0;
 }
 :hover::-webkit-scrollbar-thumb {
