@@ -45,6 +45,7 @@ function onRender(event) {
     if (innerHtml) {
       document.getElementById("borderContainer").innerHTML = innerHtml;
     }
+    document.getElementById("borderContainer").style.height = height -2 + "px";
     Streamlit.setFrameHeight(height);
     window.rendered = true;
   }

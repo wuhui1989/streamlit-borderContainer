@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="streamlit-bordercontainer",
-    version="0.0.3",
+    version="0.0.4",
     author="wuhui",
     author_email="18896724614@139.com",
     description="a box which can set style easily",
