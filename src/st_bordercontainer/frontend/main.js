@@ -26,7 +26,7 @@ function onRender(event) {
 
       for (let i = 0; i < chatlist.length; i++) {
         innerHtml += `
-         '<div class="${
+         <div class="${
            chatlist[i].user ? "messageRow" : "responseRow"
          }"><div class="${chatlist[i].user ? "avator" : "rebotAvator"}"> ${
           chatlist[i].user ? chatlist[i].user : chatlist[i].robot
