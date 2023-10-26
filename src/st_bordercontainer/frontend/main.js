@@ -51,13 +51,14 @@ function onRender(event) {
         `;
       }
     }
-    setTimeout(()=>{
-      window.keepScrollTop() 
-    },100)
 
     if (innerHtml) {
       document.getElementById("borderContainer").innerHTML = innerHtml;
     }
+    setTimeout(()=>{
+      window.keepScrollTop() 
+    },5)
+
     document.getElementById("borderContainer").style.height = height - 2 + "px";
     Streamlit.setFrameHeight(height);
     window.rendered = true;
