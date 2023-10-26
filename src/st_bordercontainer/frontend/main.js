@@ -51,6 +51,9 @@ function onRender(event) {
         `;
       }
     }
+    setTimeout(()=>{
+      window.keepScrollTop() 
+    },100)
 
     if (innerHtml) {
       document.getElementById("borderContainer").innerHTML = innerHtml;
